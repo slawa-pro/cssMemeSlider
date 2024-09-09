@@ -1,0 +1,22 @@
+.main-container {
+  background-color: rgb(52, 62, 60);
+}
+
+.slider {
+  margin: 10px auto;
+  border: 2px solid #000;
+  max-width: 80%;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+}
+
+.slider-line {
+  display: flex;
+  background: orangered;
+  transition: all ease 1s;
+}
+
+.slider-img {
+
+}

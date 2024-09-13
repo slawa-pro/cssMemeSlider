@@ -4,19 +4,62 @@
 
 .slider {
   margin: 10px auto;
-  border: 2px solid #000;
-  max-width: 80%;
+  max-width: 60%;
   height: auto;
   overflow: hidden;
   text-align: center;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .slider-line {
   display: flex;
-  background: orangered;
+  padding-top: 100px;
   transition: all ease 1s;
 }
 
-.slider-img {
+.dots-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 30px;
+}
 
+.dot {
+  width: 16px; /* Размер точки */
+  height: 16px;
+  margin: 0 4px; /* Отступы между точками */
+  border-radius: 50%; /* Круглая форма */
+  background-color: rgb(69, 120, 172); /* Цвет точек */
+  cursor: pointer; /* Значок указателя */
+  border: 2px solid transparent; /* Прозрачная граница для незадействованных точек */
+}
+
+.dot:hover  {
+  background-color:azure;
+  transition: 0.4s;
+}
+
+.selected {
+  background-color: transparent;
+  border: 2px solid #789;
+}
+
+.title-meme {
+  padding-left: 40px;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+
+}
+
+.hidden {
+  display: none;
 }

@@ -1,40 +1,22 @@
-const images = document.querySelectorAll('.slider-img');
-const sliderLine = document.querySelector('.slider-line');
-let count = 0;
-let width;
+const memeImages = document.querySelectorAll('.slider-img');
+const dots = document.querySelectorAll('.dot');
 
-function init(){
-  console.log('resize');
-  width = document.querySelector('.slider').offsetWidth;
-  sliderLine.style.width = width*images.length + 'px';
-  images.forEach(item => {
-    item.style.width = width + 'px';
-    item.style.height = 'auto';
+dots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    // Скрыть все изображения, добавив класс 'hidden'
+    memeImages.forEach(img => img.classList.add('hidden'));
+
+    // Получаем ID изображения, которое нужно показать
+    const imgId = dot.getAttribute('data-img');
+    const imgToShow = document.getElementById(imgId);
+
+    // Показать выбранное изображение, убрав класс 'hidden'
+    if (imgToShow) {
+      imgToShow.classList.remove('hidden');
+    }
+
+    // Убираем класс 'selected' у всех точек и добавляем его к текущей
+    dots.forEach(dot => dot.classList.remove('selected'));
+    dot.classList.add('selected');
   });
-  rollSlifer();
-}
-
-window.addEventListener('resize', init);
-init();
-
-document.querySelector('.slider-next').addEventListener('click', function(){
-  count++;
-  if (count >= images.length){
-    count = 0;
-  }
-
-  rollSlifer()
 });
-
-document.querySelector('.slider-prev').addEventListener('click', function(){
-  count--;
-  if (count < 0){
-    count = images.length - 1;
-  }
-
-  rollSlifer()
-});
-
-function rollSlifer(){
-  sliderLine.style.transform = 'translate(-'+count*width+'px)';
-}

@@ -1,12 +1,12 @@
 .main-container {
   background-color: rgb(52, 62, 60);
+  padding: 5vh;
 }
 
 .slider {
   margin: 10px auto;
-  max-width: 60%;
+  max-width: 50%;
   height: auto;
-  overflow: hidden;
   text-align: center;
   border-radius: 15px;
   padding: 20px;
@@ -14,15 +14,13 @@
 
 .slider img {
   width: 100%;
-  height: auto;
+  height: 50vh;
   max-height: 500px;
   object-fit: cover;
   border-radius: 10px;
 }
 
 .slider-line {
-  display: flex;
-  padding-top: 100px;
   transition: all ease 1s;
 }
 
@@ -30,17 +28,16 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  padding-right: 30px;
 }
 
 .dot {
-  width: 16px; /* Размер точки */
+  width: 16px; 
   height: 16px;
-  margin: 0 4px; /* Отступы между точками */
-  border-radius: 50%; /* Круглая форма */
-  background-color: rgb(69, 120, 172); /* Цвет точек */
-  cursor: pointer; /* Значок указателя */
-  border: 2px solid transparent; /* Прозрачная граница для незадействованных точек */
+  margin: 0 4px;
+  border-radius: 50%;
+  background-color: rgb(69, 120, 172);
+  cursor: pointer;
+  border: 2px solid transparent;
 }
 
 .dot:hover  {
@@ -57,9 +54,15 @@
   padding-left: 40px;
   font-size: 30px;
   color: rgb(255, 255, 255);
-
 }
 
 .hidden {
   display: none;
+}
+
+
+@media (max-width:800px) {
+  .dots-container {
+    justify-content: center;
+  }
 }
